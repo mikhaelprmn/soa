@@ -1,0 +1,434 @@
+<?php include("scorers.php"); ?>
+<?php include("matches.php"); ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Football Facts</title>
+  <link rel="shortcut icon" href="football.ico" type="image/x-icon">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/new-age.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">HOME</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#download">RESULTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#features">SCORERS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+            <h1 class="mb-5">A one doorway to catch you up about football!</h1>
+            <h3 class="mb-5">No room for racism.</h3>
+            <!-- <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a> -->
+          </div>
+        </div>
+        <div class="col-lg-5 my-auto">
+          <div class="device-container">
+                  <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                  <img src="img/fifa.png" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="download bg-primary text-center" id="download">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="badges">
+            <img src="img/premier-league.svg" alt="" width="280" height="280">
+          </div>
+          <h2 class="section-heading">    
+            <?= $matches['competition']['area']['name']; ?>
+            <?= $matches['competition']['name']; ?>
+            <?= $matches['competition']['id']; ?>
+          </h2>
+          <h3 style="color: lightslategray;">Matchday <?= $matches['matches']['0']['matchday']; ?></h3>
+          <br>
+
+          <table width="100%">
+            <tr>
+              <th><h3 style="font-weight: 1000;">Home</h3></th>
+              <th></th>
+              <th><h3 style="font-weight: 1000;">Away</h3></th>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td><h5 style="color: darkgoldenrod;"><?= $matches['matches']['0']['utcDate']; ?></h5></td>
+              <td></td>
+            </tr>
+
+              <tr>
+                <td><p><?= $matches['matches']['0']['homeTeam']['name']; ?></p></td>
+                  <td>
+                    <p>
+                      <?= $matches['matches']['0']['score']['fullTime']['homeTeam']; ?>
+                      -
+                      <?= $matches['matches']['0']['score']['fullTime']['awayTeam']; ?>
+                    </p>
+                  </td>
+                <td><p><?= $matches['matches']['0']['awayTeam']['name']; ?></p></td>
+              </tr>
+
+              <tr>
+                <td><p><?= $matches['matches']['1']['homeTeam']['name']; ?></p></td>
+                  <td>
+                    <p>
+                      <?= $matches['matches']['1']['score']['fullTime']['homeTeam']; ?>
+                      -
+                      <?= $matches['matches']['1']['score']['fullTime']['awayTeam']; ?>
+                    </p>
+                  </td>
+                <td><p><?= $matches['matches']['1']['awayTeam']['name']; ?></p></td>
+              </tr>
+
+              <tr>
+                <td><p><?= $matches['matches']['2']['homeTeam']['name']; ?></p></td>
+                  <td>
+                    <p>
+                      <?= $matches['matches']['2']['score']['fullTime']['homeTeam']; ?>
+                      -
+                      <?= $matches['matches']['2']['score']['fullTime']['awayTeam']; ?>
+                    </p>
+                  </td>
+                <td><p><?= $matches['matches']['2']['awayTeam']['name']; ?></p></td>
+              </tr>
+              
+              <tr>
+                <td><p><?= $matches['matches']['3']['homeTeam']['name']; ?></p></td>
+                  <td>
+                    <p>
+                      <?= $matches['matches']['3']['score']['fullTime']['homeTeam']; ?>
+                      -
+                      <?= $matches['matches']['3']['score']['fullTime']['awayTeam']; ?>
+                    </p>
+                  </td>
+                <td><p><?= $matches['matches']['3']['awayTeam']['name']; ?></p></td>
+              </tr>
+
+              <tr>
+                <td><p><?= $matches['matches']['4']['homeTeam']['name']; ?></p></td>
+                  <td>
+                    <p>
+                      <?= $matches['matches']['4']['score']['fullTime']['homeTeam']; ?>
+                      -
+                      <?= $matches['matches']['4']['score']['fullTime']['awayTeam']; ?>
+                    </p>
+                  </td>
+                <td><p><?= $matches['matches']['4']['awayTeam']['name']; ?></p></td>
+              </tr>
+
+            <tr>
+              <td></td>
+              <td><h5 style="color: darkgoldenrod;"><?= $matches['matches']['5']['utcDate']; ?></h5></th>
+              <td></td>
+            </tr>
+
+              <tr>
+                <td><p><?= $matches['matches']['5']['homeTeam']['name']; ?></p></td>
+                <td>
+                  <p>
+                    
+                    <?= $matches['matches']['5']['score']['fullTime']['homeTeam']; ?>
+                    -
+                    <?= $matches['matches']['5']['score']['fullTime']['awayTeam']; ?>
+                </p>
+                </td>
+                <td><p><?= $matches['matches']['5']['awayTeam']['name']; ?></p></td>
+              </tr>
+
+              <tr>
+                <td><p><?= $matches['matches']['6']['homeTeam']['name']; ?></p></td>
+                <td>
+                  <p>
+                    
+                    <?= $matches['matches']['6']['score']['fullTime']['homeTeam']; ?>
+                    -
+                    <?= $matches['matches']['6']['score']['fullTime']['awayTeam']; ?>
+                </p>
+                </td>
+                <td><p><?= $matches['matches']['6']['awayTeam']['name']; ?></p></td>
+              </tr>
+
+              <tr>
+                <td><p><?= $matches['matches']['7']['homeTeam']['name']; ?></p></td>
+                <td>
+                  <p>
+                    
+                    <?= $matches['matches']['7']['score']['fullTime']['homeTeam']; ?>
+                    -
+                    <?= $matches['matches']['7']['score']['fullTime']['awayTeam']; ?>
+                </p>
+                </td>
+                <td><p><?= $matches['matches']['7']['awayTeam']['name']; ?></p></td>
+              </tr>
+
+              <tr>
+                <td><p><?= $matches['matches']['8']['homeTeam']['name']; ?></p></td>
+                <td>
+                  <p>
+                    
+                    <?= $matches['matches']['8']['score']['fullTime']['homeTeam']; ?>
+                    -
+                    <?= $matches['matches']['8']['score']['fullTime']['awayTeam']; ?>
+                </p>
+                </td>
+                <td><p><?= $matches['matches']['8']['awayTeam']['name']; ?></p></td>
+              </tr>
+
+            <tr>
+              <td></td>
+              <td><h5 style="color: darkgoldenrod;"><?= $matches['matches']['9']['utcDate']; ?></h5></th>
+              <td></td>
+            </tr>
+
+              <tr>
+                <td><p><?= $matches['matches']['9']['homeTeam']['name']; ?></p></td>
+                <td>
+                  <p>
+                    
+                    <?= $matches['matches']['9']['score']['fullTime']['homeTeam']; ?>
+                    -
+                    <?= $matches['matches']['9']['score']['fullTime']['awayTeam']; ?>
+                </p>
+                </td>
+                <td><p><?= $matches['matches']['9']['awayTeam']['name']; ?></p></td>
+              </tr>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-heading text-center">
+        <h2>
+        <?= $scorers['competition']['area']['name']; ?>
+        <?= $scorers['competition']['name']; ?>
+        -
+        Leading Goal Scorers
+        </h2>
+        <p class="text-muted">
+        Matchday  
+        <?= $scorers['season']['currentMatchday']; ?>
+        (<?= $scorers['competition']['lastUpdated']; ?>)
+        </p>
+        <hr>
+      </div>
+            <table class="container">
+              <tr>
+                  <th></th>
+                  <th>Player Name</th>
+                  <th>Position</th>
+                  <th>Club</th>
+                  <th>Goals</th>
+              </tr>
+
+              <tr>
+                  <td>1</td>
+                  <td><h5><?= $scorers['scorers'][0]['player']['name']; ?></h5>
+                  <?= $scorers['scorers'][0]['player']['nationality']; ?></td>
+                  <td><?= $scorers['scorers'][0]['player']['position']; ?></td>
+                  <td><?= $scorers['scorers'][0]['team']['name']; ?></td>
+                  <td><?= $scorers['scorers'][0]['numberOfGoals']; ?></td>
+              </tr>
+
+              <tr>
+                  <td>2</td>
+                  <td><h5><?= $scorers['scorers'][1]['player']['name']; ?></h5>
+                  <?= $scorers['scorers'][1]['player']['nationality']; ?></td>
+                  <td><?= $scorers['scorers'][1]['player']['position']; ?></td>
+                  <td><?= $scorers['scorers'][1]['team']['name']; ?></td>
+                  <td><?= $scorers['scorers'][1]['numberOfGoals']; ?></td>
+              </tr>
+
+              <tr> 
+                  <td>3</td>
+                  <td><h5><?= $scorers['scorers'][2]['player']['name']; ?></h5>
+                  <?= $scorers['scorers'][2]['player']['nationality']; ?></td>
+                  <td><?= $scorers['scorers'][2]['player']['position']; ?></td>
+                  <td><?= $scorers['scorers'][2]['team']['name']; ?></td>
+                  <td><?= $scorers['scorers'][2]['numberOfGoals']; ?></td>
+              </tr>
+
+              <tr>
+                  <td>4</td>
+                  <td><h5><?= $scorers['scorers'][3]['player']['name']; ?></h5>
+                  <?= $scorers['scorers'][3]['player']['nationality']; ?></td>
+                  <td><?= $scorers['scorers'][3]['player']['position']; ?></td>
+                  <td><?= $scorers['scorers'][3]['team']['name']; ?></td>
+                  <td><?= $scorers['scorers'][3]['numberOfGoals']; ?></td>
+              </tr>
+
+              <tr>
+                  <td>5</td>
+                  <td><h5><?= $scorers['scorers'][4]['player']['name']; ?></h5>
+                  <?= $scorers['scorers'][4]['player']['nationality']; ?></td>
+                  <td><?= $scorers['scorers'][4]['player']['position']; ?></td>
+                  <td><?= $scorers['scorers'][4]['team']['name']; ?></td>
+                  <td><?= $scorers['scorers'][4]['numberOfGoals']; ?></td>
+              </tr>
+
+              <tr>
+                  <td>6</td>
+                  <td><h5><?= $scorers['scorers'][5]['player']['name']; ?></h5>
+                  <?= $scorers['scorers'][5]['player']['nationality']; ?></td>
+                  <td><?= $scorers['scorers'][5]['player']['position']; ?></td>
+                  <td><?= $scorers['scorers'][5]['team']['name']; ?></td>
+                  <td><?= $scorers['scorers'][5]['numberOfGoals']; ?></td>
+              </tr>
+
+              <tr>
+                  <td>7</td>
+                  <td><h5><?= $scorers['scorers'][6]['player']['name']; ?></h5>
+                  <?= $scorers['scorers'][6]['player']['nationality']; ?></td>
+                  <td><?= $scorers['scorers'][6]['player']['position']; ?></td>
+                  <td><?= $scorers['scorers'][6]['team']['name']; ?></td>
+                  <td><?= $scorers['scorers'][6]['numberOfGoals']; ?></td>
+              </tr>
+
+              <tr>
+                  <td>8</td>
+                  <td><h5><?= $scorers['scorers'][7]['player']['name']; ?></h5>
+                  <?= $scorers['scorers'][7]['player']['nationality']; ?></td>
+                  <td><?= $scorers['scorers'][7]['player']['position']; ?></td>
+                  <td><?= $scorers['scorers'][7]['team']['name']; ?></td>
+                  <td><?= $scorers['scorers'][7]['numberOfGoals']; ?></td>
+              </tr>
+
+              <tr>
+                  <td>9</td>
+                  <td><h5><?= $scorers['scorers'][8]['player']['name']; ?></h5>
+                  <?= $scorers['scorers'][8]['player']['nationality']; ?></td>
+                  <td><?= $scorers['scorers'][8]['player']['position']; ?></td>
+                  <td><?= $scorers['scorers'][8]['team']['name']; ?></td>
+                  <td><?= $scorers['scorers'][8]['numberOfGoals']; ?></td>
+              </tr>
+
+              <tr>
+                  <td>10</td>
+                  <td><h5><?= $scorers['scorers'][9]['player']['name']; ?></h5>
+                  <?= $scorers['scorers'][9]['player']['nationality']; ?></td>
+                  <td><?= $scorers['scorers'][9]['player']['position']; ?></td>
+                  <td><?= $scorers['scorers'][9]['team']['name']; ?></td>
+                  <td><?= $scorers['scorers'][9]['numberOfGoals']; ?></td>
+              </tr>
+            </table>
+    </div>
+  </section>
+
+  <section class="cta" style="background-image: url('img/messi.jpg');">
+    <div class="cta-content">
+      <div class="container">
+        <h2><?= $scorers['scorers'][0]['player']['name']; ?><br><?= $scorers['scorers'][0]['numberOfGoals']; ?> Goals</h2>
+        <!-- <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Like!</a> -->
+      </div>
+    </div>
+    <div class="overlay"></div>
+  </section>
+
+  <section class="contact bg-primary" id="contact">
+    <div class="container">
+      <h2>We
+        <i class="fas fa-heart"></i>
+        new friends!</h2>
+      <ul class="list-inline list-social">
+        <li class="list-inline-item social-twitter">
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item social-facebook">
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </li>
+        <li class="list-inline-item social-google-plus">
+          <a href="#">
+            <i class="fab fa-google-plus-g"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Your Website 2021. All Rights Reserved.</p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#">Privacy</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">Terms</a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#">FAQ</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/new-age.min.js"></script>
+
+</body>
+
+</html>
